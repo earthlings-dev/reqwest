@@ -41,7 +41,7 @@ async fn request_with_timeout() {
 #[wasm_bindgen_test]
 #[cfg(feature = "json")]
 fn preserve_content_type_if_set_manually() {
-    use http::{header::CONTENT_TYPE, HeaderValue};
+    use http::{HeaderValue, header::CONTENT_TYPE};
     use reqwest::Client;
     use std::collections::HashMap;
 

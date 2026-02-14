@@ -274,9 +274,10 @@ async fn tunnel_detects_auth_required() {
     let server = server::http(move |req| {
         assert_eq!(req.method(), "CONNECT");
         assert_eq!(req.uri(), "hyper.rs.local:443");
-        assert!(!req
-            .headers()
-            .contains_key(http::header::PROXY_AUTHORIZATION));
+        assert!(
+            !req.headers()
+                .contains_key(http::header::PROXY_AUTHORIZATION)
+        );
 
         async {
             let mut res = http::Response::default();

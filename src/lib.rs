@@ -276,8 +276,8 @@ macro_rules! if_hyper {
     )*}
 }
 
-pub use http::header;
 pub use http::Method;
+pub use http::header;
 pub use http::{StatusCode, Version};
 pub use url::Url;
 

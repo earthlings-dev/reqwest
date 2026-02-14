@@ -3,8 +3,8 @@
 mod support;
 use support::server;
 
-use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::Arc;
+use std::sync::atomic::{AtomicUsize, Ordering};
 
 #[tokio::test]
 async fn retries_apply_in_scope() {

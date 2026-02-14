@@ -511,10 +511,11 @@ async fn test_redirect_301_302_303_empty_payload_headers() {
                 assert_eq!(req.method(), "GET");
                 assert!(req.headers().get(reqwest::header::CONTENT_TYPE).is_none());
                 assert!(req.headers().get(reqwest::header::CONTENT_LENGTH).is_none());
-                assert!(req
-                    .headers()
-                    .get(reqwest::header::CONTENT_ENCODING)
-                    .is_none());
+                assert!(
+                    req.headers()
+                        .get(reqwest::header::CONTENT_ENCODING)
+                        .is_none()
+                );
                 http::Response::builder()
                     .header("server", "test-dst")
                     .body(Body::default())
